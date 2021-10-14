@@ -13,8 +13,6 @@ features = ["_docs-rs-build"]
 targets = ["x86_64-unknown-linux-gnu"]
 
 [features]
-mysql = ["sqlx/mysql", "ormx-macros/mysql"]
-sqlite = ["sqlx/sqlite", "ormx-macros/sqlite"]
 postgres = ["sqlx/postgres", "ormx-macros/postgres"]
 
 _docs-rs-build = ["sqlx/runtime-tokio-rustls", "postgres"]
@@ -24,9 +22,7 @@ ormx-macros = { path = "../ormx-macros", version = "0.10" }
 futures = "0.3"
 
 [dependencies.sqlx]
-version = "0.5"
-default-features = false
-features = ["macros"]
+sqlx = { git = "https://github.com/launchbadge/sqlx", branch = "master", features = ["runtime-tokio-native-tls", "postgres", "macros"] }
 
 [dev-dependencies]
 tokio = { version = "1.1", features = ["full"] }

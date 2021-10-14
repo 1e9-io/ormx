@@ -11,8 +11,6 @@ license = "MIT"
 proc-macro = true
 
 [features]
-sqlite = []
-mysql = []
 postgres = []
 
 [dependencies]
